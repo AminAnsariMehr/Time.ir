@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ساعت و تقویم ایران</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/app.js"></script>
 </head>
 
 <body>
@@ -18,13 +19,13 @@
         </header>
 
         <main class="main">
-            <!------------------- Start Of Dates Panel ------------------->
+            <!---------------------- Start Of Dates Panel ---------------------->
             <div class="datesPanel">
                 <h2 class="datesPanel__today">تاریخ امروز</h2>
                 <div class="datesPanel__currentDates">
                     <div class="datesPanel__solarDate">
                         <span class="datesPanel__solarDateTitle">خورشیدی</span>
-                        <span class="datesPanel__solarCurrentDateNumber" > 1402/06/26</span>
+                        <span class="datesPanel__solarCurrentDateNumber"> 1402/06/26</span>
                         <span class="datesPanel__solarCurrentDateFull">یکشنبه - 26 شهریور 1402</span>
                     </div>
 
@@ -40,30 +41,72 @@
                     </div>
                 </div>
             </div>
-            <!-------------------- End Of Dates Panel -------------------->
+            <!----------------------- End Of Dates Panel ----------------------->
 
 
 
-            
-            <!----------------- Start Of Time Indicators ----------------->
+
+            <!-------------------- Start Of Time Indicators --------------------->
             <div class="timeIndicators">
+                <!------------------------ Age Calculator ------------------------>
                 <div class="timeIndicators__ageCalculator">
 
+                    <div class="ageCalculator">
+                        <h1 class="ageCalculator__title"><span
+                                class="ageCalculator__title--differentColor">Age</span>&nbsp;Calculator</h1>
+                        <div class="ageCalculator__inputBox">
+                            <input class="ageCalculator__inputField" id="dateField" type="date">
+                            <button class="ageCalculator__btnCalc" id="btnCalc">Calculator</button>
+                        </div>
+                        <p class="ageCalculator__displayAge" id="displayAge"></p>
+                    </div>
+
                 </div>
 
+                <!------------------------- Analog Clock ------------------------->
                 <div class="timeIndicators__analogWatch">
+                    <div class="clock">
 
+                        <div id="secondCircle" class="clock__circles clock__secondCircle"><i
+                                class="clock__Indicators clock__secondIndicator"></i></div>
+                        <div id="minuteCircle" class="clock__circles clock__minuteCircle"><i
+                                class="clock__Indicators clock__minuteIndicator"></i></div>
+                        <div id="hourCircle" class="clock__circles clock__hourCircle"><i
+                                class="clock__Indicators clock__hourIndicator"></i></div>
+
+                        <span class="clock__number" style="--i:1"><b class="clock__number--bold">1</b></span>
+                        <span class="clock__number" style="--i:2"><b class="clock__number--bold">2</b></span>
+                        <span class="clock__number" style="--i:3"><b class="clock__number--bold">3</b></span>
+                        <span class="clock__number" style="--i:4"><b class="clock__number--bold">4</b></span>
+                        <span class="clock__number" style="--i:5"><b class="clock__number--bold">5</b></span>
+                        <span class="clock__number" style="--i:6"><b class="clock__number--bold">6</b></span>
+                        <span class="clock__number" style="--i:7"><b class="clock__number--bold">7</b></span>
+                        <span class="clock__number" style="--i:8"><b class="clock__number--bold">8</b></span>
+                        <span class="clock__number" style="--i:9"><b class="clock__number--bold">9</b></span>
+                        <span class="clock__number" style="--i:10"><b class="clock__number--bold">10</b></span>
+                        <span class="clock__number" style="--i:11"><b class="clock__number--bold">11</b></span>
+                        <span class="clock__number" style="--i:12"><b class="clock__number--bold">12</b></span>
+                    </div>
+
+                    <!------------------------ Digital Clock ------------------------>
+                    <div id="time" class="digitalClock">
+                        <div id="hours" class="digitalClock__parameter digitalClock__hours">00</div>
+                        <div id="minutes" class="digitalClock__parameter digitalClock__minutes">00</div>
+                        <div id="seconds" class="digitalClock__parameter digitalClock__seconds">00</div>
+                        <div id="am_pm" class="digitalClock__parameter digitalClock__AmPm">AM</div>
+                    </div>
                 </div>
             </div>
-            <!------------------ End Of Time Indicators ------------------>
+            <!--------------------- End Of Time Indicators --------------------->
 
 
-            <!------------------- Start Of Dates Panel ------------------->
+
+            <!---------------------- Start Of Dates Panel ---------------------->
             <div class="calcultorSections">
                 <div class="calcultorSections__unitCalculator"></div>
                 <div class="calcultorSections__mathCalculator"></div>
             </div>
-            <!-------------------- End Of Dates Panel -------------------->
+            <!----------------------- End Of Dates Panel ----------------------->
 
 
         </main>
