@@ -4,9 +4,7 @@ const btnCalculate = document.getElementById("btnCalc");
 const DisplayAge = document.getElementById("displayAge")
 
 userInputDate.max = new Date().toISOString().split("T")[0];
-
 btnCalculate.addEventListener("click", calculateAge)
-
 
 function calculateAge() {
     // --------- Date Of Birth's User ---------
@@ -46,7 +44,6 @@ function calculateAge() {
 //------------ End Of Age Calculator -------------------- 
 
 
-
 //------------ Start Of Analog Clock -------------------- 
 const hourElement = document.getElementById("hourCircle");
 const minuteElement = document.getElementById("minuteCircle");
@@ -84,5 +81,4 @@ setInterval(() => {
     D_MinutesElValue < 10 ?  minutesDigitalElement.innerHTML = "0" + `${D_MinutesElValue}` : null ;
     D_HoursElValue < 10 ? hoursDigitalElement.innerHTML = "0" + `${D_HoursElValue}` : null ;    
 })
-
 //------------ End Of Analog Clock --------------------- 

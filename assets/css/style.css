@@ -145,7 +145,8 @@ body {
     font-size: 16px;
 }
 
-.timeIndicators {
+.timeIndicators,
+.calculatorsComplex {
     width: 100%;
     height: 65vh;
     display: flex;
@@ -153,6 +154,10 @@ body {
     align-items: center;
     gap: 10px;
     /* background-color: #444; */
+}
+
+.calculatorsComplex {
+    direction: ltr;
 }
 
 .timeIndicators__ageCalculator,
@@ -174,12 +179,33 @@ body {
     height: 100%;
 }
 
+
+.unitCalculatorSection,
+.mathCalculatorSection {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.unitCalculatorSection {
+    position: relative;
+    width: 60%;
+    background-color: peru;
+}
+
+.mathCalculatorSection {
+    width: 40%;
+    /* background-color: red; */
+}
+
+
 /*-------------------  Start Of Analog Clock -------------------*/
 .clock {
     position: relative;
     width: 350px;
     min-height: 350px;
-    /* background-color: #031321; */
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -204,7 +230,7 @@ body {
 
 .clock__number {
     position: absolute;
-    inset: 5px;
+    inset: 6px;
     color: #fff;
     text-align: center;
     transform: rotate(calc(30deg * var(--i)));
@@ -304,7 +330,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px 20px;
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 600;
     font-family: DigitalFont;
     border-radius: 40px;
@@ -343,7 +369,7 @@ body {
 }
 
 .digitalClock__AmPm {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -365,7 +391,6 @@ body {
 }
 
 /*--------------------  End Of Analog Clock --------------------*/
-
 
 
 /*-------------------  Start Of Age Calculator -------------------*/
@@ -422,7 +447,6 @@ body {
     color: #e8e6e3;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
-
 }
 
 .ageCalculator__inputField::-webkit-calendar-picker-indicator {
@@ -459,3 +483,150 @@ body {
 }
 
 /*--------------------  End Of Age Calculator --------------------*/
+
+
+/*-------------------- Start Of Math Calculator  ------------------*/
+.calculator {
+    /* background-color: #3a4452; */
+    /* background-color: #222; */
+    /* direction: ltr; */
+    /* padding: 20px; */
+    /* border-radius: 10px; */
+}
+
+.calculator form input {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+    border-radius: 50%;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+        5px 5px 15px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    background: transparent;
+    margin: 5px;
+}
+
+form .display {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+}
+
+form .display input {
+    text-align: right;
+    padding-right: 20px;
+    font-size: 30px;
+    flex: 1;
+    box-shadow: none;
+}
+
+form input.equal {
+    width: 110px;
+    border-radius: 10px;
+}
+
+form input.operator {
+    color: #33ffd8;
+}
+
+/*-------------------- End Of Math Calculator  -------------------*/
+
+
+/****************** Animated Border ******************/
+
+.borderWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* width: 313px; */
+    /* height: 427px; */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #0008;
+    color: #aaa;
+    text-transform: uppercase;
+    overflow: hidden;
+    z-index: 2;
+}
+
+
+.borderWrapper::after,
+.borderWrapper::before {
+    content: ' ';
+    position: absolute;
+    width: 170%;
+    height: 150%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.borderWrapper::after {
+    background: #222;
+    width: 95%;
+    height: 95%;
+    box-shadow: inset 5px 5px 15px #0008;
+    border-radius: 10px;
+}
+
+.borderWrapper::before {
+    background: conic-gradient(#44f 20deg, transparent 120deg);
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+
+}
+
+
+
+/*------------------------- Units Convertor -------------------------*/
+.mainConvertor {
+    width: 100%;
+    height: auto;
+    display: none;
+    background-color: green;
+}
+
+.unitCalculator {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    background-color: red; 
+}
+
+#length:target #length{
+    width: 100%;
+    height: auto;
+}
+
+#length:target .mainConvertor{
+    display: block;
+}
+
+#temperature:target #temperature{
+    width: 100%;
+    height: auto;
+}
+
+#temperature:target .mainConvertor{
+    display: block;
+}
+
+#weight:target #weight{
+    width: 100%;
+    height: auto;
+}
+
+#weight:target .mainConvertor{
+    display: block;
+}
+
+
